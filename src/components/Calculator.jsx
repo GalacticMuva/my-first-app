@@ -18,29 +18,39 @@ const Calculator = () => {
   };
 
   return (
-    <div style={{ padding: '20px', border: '1px solid #ccc' }}>
-      <h2>Interactive Calculator</h2>
-      
-      <input 
-        type="number" 
-        value={num1} 
-        onChange={(e) => setNum1(e.target.value)} 
-        placeholder="First Number"
-      />
-      
-      <input 
-        type="number" 
-        value={num2} 
-        onChange={(e) => setNum2(e.target.value)} 
-        placeholder="Second Number"
-      />
+    <div className="card shadow-sm mx-auto" style={{ maxWidth: '400px' }}>
+      <div className="card-body">
+        <h2 className="card-title text-center mb-4">React Calc</h2>
+        
+        <div className="mb-3">
+          <label className="form-label">First Number</label>
+          <input 
+            type="number" 
+            className="form-control form-control-lg"
+            value={num1} 
+            onChange={(e) => setNum1(e.target.value)} 
+          />
+        </div>
+        
+        <div className="mb-3">
+          <label className="form-label">Second Number</label>
+          <input 
+            type="number" 
+            className="form-control form-control-lg"
+            value={num2} 
+            onChange={(e) => setNum2(e.target.value)} 
+          />
+        </div>
 
-      <div>
-        <button onClick={handleSum}>Calculate Sum</button>
-        <button onClick={handleClear}>Clear</button>
+        <div className="d-grid gap-2 mb-3">
+          <button className="btn btn-primary btn-lg" onClick={handleSum}>Add Numbers</button>
+          <button className="btn btn-outline-danger" onClick={handleClear}>Clear</button>
+        </div>
+
+        <div className="alert alert-info text-center m-0">
+          <h4 className="m-0">Result: {result}</h4>
+        </div>
       </div>
-
-      <h3>Result: {result}</h3>
     </div>
   );
 };
